@@ -1,0 +1,320 @@
+/*CSS seguindo a ordem do HTML e com propriedades em ordem alfabética*/
+
+/*Geral*/
+:root {
+	--cor-titulos: #00303f;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Titillium Web', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin-bottom: 10%;
+}
+
+/*MENU*/
+div#navbar {
+	display: flex;
+	justify-content: center;
+	position: relative; 
+	width: 100%;
+	z-index: 1; /*para a setinha de voltar ao topo ficar atrás do menu*/
+}
+
+nav { 
+	display: flex;
+	justify-content: space-around;
+	letter-spacing: 0.1875rem; /*3px*/	
+	position: absolute; /*pra posicionar o menu em cima da imagem. Seu pai div#navbar é relative*/
+	top: 6%;
+	width: 60%; /*pra cada âncora ter uma referência pra se alinhar (space-around)*/
+}
+
+nav a {
+	color: #f9f8f6ff;
+	cursor: pointer;
+	font-size: 2vw;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*link do I.D.C*/
+.instrucao a {
+	color: var(--cor-titulos);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+
+@keyframes sobe-desce {	
+50% {
+	-webkit-transform: translateY(-12%);
+	transform: translateY(-12%);
+	}
+}
+
+nav a:hover {
+	animation: sobe-desce 1s infinite;
+	color: #dbae1eff;
+}
+
+img#logo {
+	max-width: 100%; /*imagem tem a mesma width da navbar pra ficar fácil de centralizar. Usei max-width como sugerido no livro, 100% do elemento pai.*/
+}
+
+
+/* SOBRE */
+section {
+	color: var(--cor-titulos);
+	font-size: 1.4vw; /*vw pra ficar responsiva.*/
+	margin: 10% auto 0 auto;
+	text-align: center;	
+	width: 60%;
+}
+
+
+section#sobre p {
+	text-align: justify;
+}
+
+
+/*Instruções*/
+section#instrucoes p {
+	color: var(--cor-titulos);
+	margin-bottom: 12%;
+	margin-top: 3%;
+	text-align: center;
+}
+
+div.instrucao img {
+	width: 10%;
+}
+
+#carro-aumentado {
+	width: 18%;	
+}
+
+
+
+/*Jogar*/
+div#cores {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-top: 6%;
+}
+
+div#cores div{
+	border: 2px solid var(--cor-titulos);
+	border-radius: 25%;
+	cursor: pointer;
+	height: 5vw;
+	width: 5vw;
+}
+
+@keyframes gira-gira {	
+	50% { 
+		-webkit-transform: rotate(135deg);
+		transform: rotate(135deg);
+	}
+
+	100% { 
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+
+	
+div#cores div:hover {
+	animation: gira-gira 2s infinite;
+}
+
+div#branco {
+	background-color: #f9f8f6ff;
+}
+
+div#amarelo {
+	background-color: #fdf85aff;
+}
+
+div#azul {
+	background-color: #3eabffff;
+}
+
+div#laranja {
+	background-color: #ff8c40ff;
+}
+
+div#rosa {
+	background-color:#ff67a4ff;
+}
+
+
+/* JOGO */
+/*Esta é a div mãe que abriga as imagens. 
+Precisamos usar position relative nela para que o absolute de cada imagem a use como referência e se posicione com base nela*/
+#imagens {
+	margin-bottom: 10%; 
+	margin-top: 8%;
+	position: relative;
+	text-align: center; /*Usei text-align pra alinhar a imagem ao centro*/
+}
+
+img#fundo {
+	width: 60%;	
+}
+
+img#carro {
+	left: 21%;
+	position: absolute; /*absolute para que ela use o pai como referência para se posicionar*/
+	top: 75%;
+	width: 7%;
+	z-index: 1; /*pro carro ficar na frete do posto e não atrás dele*/
+}
+
+img#posto {
+	position: absolute;
+	right: 38%;
+	top: 55%;
+	width: 8.5%;
+}
+
+input#tanque {
+	color: var(--cor-titulos);
+	font-size: 1vw;
+	height: 2vw;
+	left: 22%;
+	margin-top: 0.5%;	
+	position: absolute;
+	top: 5%;
+	width: 10vw;
+}
+
+input#consumo {
+	color: var(--cor-titulos);
+	font-size: 1vw;
+	height: 2vw;
+	left: 22%;
+	margin-top: 0;	
+	position: absolute;
+	top: 20%;
+	width: 10vw;
+}
+
+p#gasolina {
+	color: var(--cor-titulos);
+	font-size: 1.2vw;
+	font-weight: normal;
+	height: 2vw;
+	left: 47.5%; 
+	position: absolute;
+	top: 9%;
+	width: 20vw;
+}
+
+p#deslocamentoMax {
+	color: var(--cor-titulos);
+	font-size: 1.2vw;
+	font-weight: normal;
+	height: 2vw;
+	left: 47.5%; 
+	position: absolute;
+	top: 24%;
+	width: 20vw;
+}
+
+i.fa-arrow-circle-up {
+	background-color: white;
+	border: 4px solid white;
+	border-radius: 50%;
+	bottom: 10%;
+	color: #0193D2;
+	font-size: 3.5vw;
+	position: fixed;
+	right: 10%;
+}
+
+i.fa-volume-up, i.fa-volume-mute {
+	color: var(--cor-titulos);
+	cursor: pointer;
+	font-size: 1.5vw;
+	left: 35%;
+	position: absolute;
+	top: 9%;
+	visibility: visible;
+}
+
+@keyframes pulsa {	
+	50% {
+	-webkit-transform: scale(1.3,1.3);
+	transform: scale(1.3,1.3);
+	}
+}
+
+i.fa-volume-up:hover, i.fa-volume-mute:hover, i.fa-arrow-circle-up:hover {
+	animation: pulsa 1s infinite;
+}
+
+i.fa-volume-up {
+	visibility: hidden;
+}
+
+
+/*rodapé*/
+footer {
+	background-color: #0193D2;
+	font-size: 2.5rem;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;	
+	width: 100%;
+}
+
+img#logo-rodape {
+	margin-bottom: 1%;
+	margin-top: 3%;
+	width: 11%;
+}
+
+div.linha-dourada {
+	background-color: #dbae1eff;
+	height: 3px;
+	margin: 0 auto;
+	width: 60%;
+}
+
+div#logos-contato {
+	display: flex;
+	justify-content: space-evenly;
+	margin-left: 14.5%; /*pra alinhar as logos porque elas não tinham o mesmo tamanho vazio*/
+	width: 70%;
+}
+
+div#logos-contato img{
+	margin-bottom: 6%;
+	margin-top: 14%;
+	width: 12vw;
+}
+
+/*animação mais sutil do que a sobe-desce*/
+@keyframes sobe-desce2 {	
+	50% {
+		-webkit-transform: translateY(-10%);
+		transform: translateY(-10%);
+		}
+	}
+
+div#logos-contato img:hover {
+	animation: sobe-desce2 1s infinite;
+}
+
+div#autor {
+	color: white;
+	font-size: 1.5vw;
+	margin-top: 2%;
+	padding-bottom: 2%;	
+}

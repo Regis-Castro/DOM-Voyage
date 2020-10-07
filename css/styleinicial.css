@@ -1,0 +1,113 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'MuseoModerno', cursive;
+}
+
+div.container {
+    margin-top: 60px;
+    height: 600px;
+    background-image: url("https://wwwumviajantecombr-jmyt0ry.stackpathdns.com/wp-content/uploads/2019/02/valle-de-la-luna-deserto-atacama-003.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+
+
+div.fundo {
+    width: 45%;
+    height: 400px;
+    background-image: url("../imagens/fundo.png");
+    margin: 100px 0px 100px 600px;
+    background-size: contain;
+    position: absolute; /*tive que usar absolute pra conseguir centralizar a img da pista na tela*/
+    
+}
+
+#car {
+    width: 150px;
+    margin-top: 328px;
+    margin-left: 10px;
+    
+    
+}
+
+.buttons button{
+    font-size: 30px;
+    background-color: burlywood;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.buttons .escolherCarro {
+    color: white;
+    padding: 5px;
+    
+}
+
+.buttons  {
+    margin-left: 100px;
+    
+    
+}
+
+.buttons #vermelho {
+    color: red;
+}
+
+.buttons #cinza {
+    color: grey;
+}
+
+.buttons #azul {
+    color: blue;
+}
+
+.mover {
+    color: white;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+#bomba {
+    width: 60px;
+    margin-left: 1300px;
+    margin-top: 340px;
+    position: absolute;
+
+}
+
+form  {
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    margin-left: 1000px;
+    background-color: black;
+    position: absolute;
+    display: none;
+    
+}
+
+audio {
+    display: block;
+}
+
+
+#gasolina {
+    font-size: 30px;
+    margin-left: 620px;
+    position: absolute;
+}
+
+.restart {
+    color: white;
+    margin-left: 10px;
+    font-size: 21px;
+}
+
+h1#jogo {
+    color: blue;
+    margin: 10px 900px -100px 900px;
+    font-size: 50px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>DOM Voyage</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+
+<audio id="confirmacao" src="sons/confirmation_alert.mp3"></audio>
+<audio loop id="noktaStirado" src="sons/noktaStirado.mp3"></audio>
+
+<div id="navbar">
+	<img id="logo" src="imagens/cabecalho.png" alt="cabecalho"> <!--Coloquei a img antes pra ver se o site a carrega mais rapidamente. Parece que deu certo-->
+	<nav>
+		<a id="sobre">Sobre</a>
+		<a id="instrucoes">Instruções</a>
+		<a id="jogar">Jogar</a>
+		<a id="contato">Contato</a>
+	</nav>
+</div>
+
+<section id="sobre">
+	<h1 class="titulo">Sobre o DOM Voyage</h1>
+	<p>Após a conclusão do curso "Javacript do Básico ao Avançado", ministrado por Matheus Battisti, senti a necessidade de colocar em ação os conhecimentos que obtive ao longo dos meus estudos, e então desenvolvi este projeto com o intuito de praticar eventos de navegador para manipulação do DOM (Document Object Model). Nesse sentido, utilizei como inspiração um exercício da seção 11, intitulada "Orientação a objetos", que abordava a programação do abastecimento de um carro.</p>
+	<br>
+	<p>O Dom Voyage refere-se, basicamente, a uma interação desktop entre o usuário e o navegador. Pode-se escolher a cor, quantos litros o tanque deve conter inicialmente, e também qual é o consumo de gasolina do automóvel, em km/l. O carro será capaz de percorrer distâncias variadas conforme os dados que o usuário determinar, fazendo com que talvez seja possível dirigir até o posto de gasolina para abastecer o tanque.</p>
+	<br>
+	<p>Durante este projeto pude praticar os seguintes eventos de Javacript: click, scrollTo, scrollIntoView, keydown e input. Além disso, apliquei CSS flexbox para posicionar os elementos HTML, assim como estudei sobre a construção de layouts fluídos e utilizei unidades relativas para isso. Também tive contato com animações CSS com keyframes pela primeira vez.</p>
+</section>
+
+<section id="instrucoes">
+	<h1 class="titulo">Instruções</h1>
+	<div class="instrucao">
+		<img id="carro-aumentado" src="imagens/carro.png" alt="carro">
+		<p> 1) Escolha a cor do seu carro clicando sobre um dos quadrados.
+			<br><br>
+				2) Digite um valor em cada um dos campos para determinar a quantidade de gasolina inicial do tanque e o consumo do seu carro, em km/l.
+				Esses valores serão utilizados para determinar a distância máxima que o carro será capaz de percorrer.
+		</p>
+	</div>
+
+	<div class="instrucao">
+		<img src="imagens/setas.png" alt="setas">
+		<p> 3) Clique no ícone de som para ativar e desativar a música "Nokta stirado", do <a href="https://initialsdc.bandcamp.com" target="_blank">Inicialoj D.C. </a>. 
+		<br><br>
+				4) Use as setas direita e esquerda do seu teclado para dirigir. O seu carro gastará um litro de gasolina a cada deslocamento.	</p>
+	</div>
+
+	<div class="instrucao">
+		<img src="imagens/bomba.png" alt="bomba">
+		<p> 5) É possível abastecer o tanque quando estiver em frente ao posto de gasolina. Pressione "s" para confirmar o abastecimento ou "n" caso não queira realizá-lo. Se a gasolina terminar, aperte "Enter" e digite novos valores de gasolina e consumo para recomeçar o jogo.</p>
+	</div>
+</section>
+
+<section id="jogar">
+	<h1 class="titulo">Jogar</h1>
+	<p>Selecione a cor do seu carro e boa viagem!</p>
+	<div id="cores">
+		<div id="branco"></div>
+		<div id="amarelo"></div>
+		<div id="azul"></div>
+		<div id="laranja"></div>
+		<div id="rosa"></div>
+	</div>
+</section>
+
+<div id="imagens"> 
+	<img id="fundo" src="imagens/rodovia_dia.png" alt="fundo">
+	<img id="carro" src="imagens/carro_branco.png" alt="carro">
+	<img id="posto" src="imagens/posto.png" alt="posto de gasolina">
+	<input id="tanque" type="number" placeholder="Gasolina no tanque (L)" min="1" oninput="validity.valid||(value='')" step="0.1"> 
+	<!-- pra aceitar só valores maiores do que 1 no input tanque usei o "oninput". O step faz com que eu só possa digitar números com o seu intervalo--> 
+	<input id="consumo" type="number" placeholder="Consumo (Km/L)" min="1" oninput="validity.valid||(value='')" step="0.1">	
+	<p id="gasolina">Gasolina: 0 litros</p>
+	<p id="deslocamentoMax">Deslocamento máximo: 0 Km</p>
+	<i class="fas fa-volume-up"></i><i class="fas fa-volume-mute"></i>	 
+</div>
+
+
+<center>
+	<a id="seta"><i class="fas fa-arrow-circle-up"></i></a>
+</center>
+
+
+<footer>
+	<img id="logo-rodape" src="imagens/logo.png" alt="rodape">
+	<div class="linha-dourada"></div>
+
+	<div id="logos-contato">
+		<a href="https://github.com/Regis-Castro" target="a_blank"><img src="imagens/github.png" alt="github"></a>
+		<a href="https://instagram.com/regis_de_castro" target="a_blank"><img src="imagens/instagram.png" alt="instagram"></a>
+		<a href="https://twitter.com/_Regisbomber" target="a_blank"><img src="imagens/twitter.png" alt="twitter"></a>
+	</div>
+
+
+	<div class="linha-dourada"></div>
+
+	<div id="autor">
+		<h5>Regis de Castro Gotardi</h5>
+		<h6>2020</h6>
+	</div>
+		
+</footer>
+
+<script src="js/script.js"></script>
+<!--É recomendado usar class no html e querySelector('.') no js mas não fiz isso neste projeto-->
+</body>
